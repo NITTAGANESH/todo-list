@@ -12,20 +12,20 @@ const Card = ({ taskObj, index, deleteTask, updateListArray }) => {
             secondaryColor: "#ECF3FC"
         },
         {
-            primaryColor: "#F9D288",
-            secondaryColor: "#FEFAF1"
+            primaryColor: "rgb(2, 9, 33)",
+            secondaryColor: "#ECF3FC"
         },
         {
             primaryColor: "#5DC250",
-            secondaryColor: "#F2FAF1"
+            secondaryColor: "#ECF3FC"
         },
         {
             primaryColor: "#F48687",
-            secondaryColor: "#FDF1F1"
+            secondaryColor: "#ECF3FC"
         },
         {
             primaryColor: "#B964F7",
-            secondaryColor: "#F3F0FD"
+            secondaryColor: "#ECF3FC"
         }
     ]
 
@@ -47,9 +47,12 @@ const Card = ({ taskObj, index, deleteTask, updateListArray }) => {
                 <span class="card-header" style={{ "background-color": colors[index % 5].secondaryColor, "border-radius": "10px" }}>{taskObj.Name}</span>
                 <p className="mt-3">{taskObj.Description}</p>
 
-                <div style={{ "position": "absolute", "right": "20px", "bottom": "20px" }}>
-                    <i class="far fa-edit" style={{ "color": colors[index % 5].primaryColor, "cursor": "pointer", "marginRight": "3px" }} onClick={() => setModal(true)}></i>
-                    <i class="fas fa-trash-alt" style={{ "color": colors[index % 5].primaryColor, "cursor": "pointer" }} onClick={handleDelete}></i>
+                <div class="icons">
+                    <button class="update" style={{ marginRight: "20px", "borderRadius": "5px" }} onClick={() => setModal(true)}>
+                        <i class="fa-solid fa-pen-to-square"></i>update</button>
+                    <button class="delete" style={{ backgroundColor: "red", marginRight: "20px" }} onClick={handleDelete}>
+                        <i class="fa-solid fa-trash"></i>delete
+                    </button>
                 </div>
             </div>
             <EditTask modal={modal} toggle={toggle} updateTask={updateTask} taskObj={taskObj} />

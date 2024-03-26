@@ -9,9 +9,10 @@ function App() {
 
   return (
     <div className="App" style={{
-      backgroundImage: `url(${backgroundImage})`,
-      // backgroundRepeat: "no-repeat",
-      backgroundSize: "100%",
+      "backgroundImage": `url(${backgroundImage})`,
+      "backgroundRepeat": "no-repeat",
+      "backgroundSize": "100%",
+      "height": "100%",
     }}>
       <TodoList />
     </div>
